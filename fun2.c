@@ -180,3 +180,19 @@ int my_rot13string(va_list types, char bufferings[],
 	}
 	return (read);
 }
+
+/**
+ * convert_myunsigned - Casts a number to the specified my_size
+ * @digit: Number to be casted
+ * @my_size: Number indicating the type to be casted
+ *
+ * Return: Casted value of digit
+ */
+long int convert_myunsigned(unsigned long int digit, int my_size)
+{
+	if (my_size == S_BIG)
+		return (digit);
+	else if (my_size == S_SMALL)
+		return ((unsigned short)digit);
+	return ((unsigned int)digit);
+}

@@ -2,7 +2,7 @@
 
 /**
  * write_mychar - Prints a string
- * @c: char types.
+ * @b: char types.
  * @bufferings: bufferings array to handle print
  * @my_flags:  Calculates active my_flags.
  * @my_width: get my_width.
@@ -81,8 +81,8 @@ int write_mynumber(int just_negative, int find, char bufferings[],
  * @find: Index at which the number starts on the bufferings
  * @bufferings: bufferings
  * @my_flags: my_flags
- * @my_width: my_width
- * @prec: my_precision specifier
+ * @mw: my_width
+ * @myp: my_precision specifier
  * @measure: Number measure
  * @my_pile: Pading char
  * @my_extra: Extra char
@@ -90,44 +90,45 @@ int write_mynumber(int just_negative, int find, char bufferings[],
  * Return: Number of printed chars.
  */
 int write_mynum(int find, char bufferings[],
-	int my_flags, int my_width, int my_precision,
+	int my_flags, int mw, int myp,
 	int measure, char my_pile, char my_extra)
 {
 	int a, my_pile_start = 1;
 
-	if (my_precision == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0' && my_width == 0)
+	if (myp == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0' && mw == 0)
 		return (0);
-	if (my_precision == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0')
+	if (myp == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0')
 		bufferings[find] = my_pile = ' ';
-	if (my_precision > 0 && my_precision < measure)
+	if (myp > 0 && myp < measure)
 		my_pile = ' ';
-	while (my_precision > measure)
+	while (myp > measure)
 		bufferings[--find] = '0', measure++;
 	if (my_extra != 0)
 		measure++;
-	if (my_width > measure)
+	if (mw > measure)
 	{
-		for (a = 1; a < my_width - measure + 1; a++)
+		for (a = 1; a < mw - measure + 1; a++)
 			bufferings[a] = my_pile;
 		bufferings[a] = '\0';
 		if (my_flags & F_SUBTRACT && my_pile == ' ')
 		{
 			if (my_extra)
 				bufferings[--find] = my_extra;
-			return (write(1, &bufferings[find], measure) + write(1, &bufferings[1], a - 1));
+	return (write(1, &bufferings[find],
+	measure) + write(1, &bufferings[1], a - 1));
 		}
 		else if (!(my_flags & F_SUBTRACT) && my_pile == ' ')
 		{
 			if (my_extra)
 				bufferings[--find] = my_extra;
-			return (write(1, &bufferings[1], a - 1) + write(1, &bufferings[find], measure));
+	return (write(1, &bufferings[1], a - 1) + write
+	(1, &bufferings[find], measure));
 		}
 		else if (!(my_flags & F_SUBTRACT) && my_pile == '0')
 		{
 			if (my_extra)
 				bufferings[--my_pile_start] = my_extra;
-			return (write(1, &bufferings[my_pile_start], a - my_pile_start) +
-				write(1, &bufferings[find], measure - (1 - my_pile_start)));
+	return (write(1, &bufferings[my_pile_start], a - my_pile_start) + write(1, &bufferings[find], measure - (1 - my_pile_start)));
 		}
 	}
 	if (my_extra)
@@ -218,17 +219,17 @@ int write_mypointers(char bufferings[], int find, int measure,
 		{
 			bufferings[--find] = 'x';
 			bufferings[--find] = '0';
-			if (my_extra)
-				bufferings[--find] = my_extra;
-			return (write(1, &bufferings[find], measure) + write(1, &bufferings[3], a - 3));
+		if (my_extra)
+		bufferings[--find] = my_extra;
+	return (write(1, &bufferings[find], measure) + write(1, &bufferings[3], a - 3));
 		}
 		else if (!(my_flags & F_SUBTRACT) && my_pile == ' ')
 		{
 			bufferings[--find] = 'x';
 			bufferings[--find] = '0';
-			if (my_extra)
-				bufferings[--find] = my_extra;
-			return (write(1, &bufferings[3], a - 3) + write(1, &bufferings[find], measure));
+		if (my_extra)
+			bufferings[--find] = my_extra;
+	return (write(1, &bufferings[3], a - 3) + write(1, &bufferings[find], measure));
 		}
 		else if (!(my_flags & F_SUBTRACT) && my_pile == '0')
 		{

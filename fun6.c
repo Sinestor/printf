@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * get_flags - Calculates active flags
+ * get_my_flag - Calculates active flags
  * @format: Formatted string in which to print the arguments
- * @i: take a parameter.
+ * @a: take a parameter.
  * Return: Flags:
  */
 int get_my_flag(const char *format, int *a)
@@ -35,9 +35,9 @@ int get_my_flag(const char *format, int *a)
 }
 
 /**
- * get_precision - Calculates the precision for printing
+ * get_my_precision - Calculates the precision for printing
  * @format: Formatted string in which to print the arguments
- * @i: List of arguments to be printed.
+ * @a: List of arguments to be printed.
  * @list: list of arguments.
  *
  * Return: Precision.
@@ -98,9 +98,9 @@ int get_my_size(const char *format, int *a)
 
 
 /**
- * get_width - Calculates the width for printing
+ * get_my_width - Calculates the width for printing
  * @format: Formatted string in which to print the arguments.
- * @i: List of arguments to be printed.
+ * @a: List of arguments to be printed.
  * @list: list of arguments.
  *
  * Return: width.

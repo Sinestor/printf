@@ -6,12 +6,12 @@
  * @bufferings: bufferings array to handle prints.
  * @my_flags:  Calculates active flag.
  * @my_width: get my_width.
- * @my_precision: my_precision specifications.
+ * @my_pr: my_precision specifications.
  * @my_size: my_size specifiers.
  * Return: Numbers of chars printed.
  */
 int print_unsignednum(va_list types, char bufferings[],
-	int my_flags, int my_width, int my_precision, int my_size)
+	int my_flags, int my_width, int my_pr, int my_size)
 {
 	int a = BUFFER_SIZE - 2;
 	unsigned long int digit = va_arg(types, unsigned long int);
@@ -31,7 +31,7 @@ int print_unsignednum(va_list types, char bufferings[],
 
 	a++;
 
-	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_precision, my_size));
+	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_pr, my_size));
 }
 
 /**
@@ -40,12 +40,12 @@ int print_unsignednum(va_list types, char bufferings[],
  * @bufferings: bufferings array to handle print.
  * @my_flags:  Calculates active flag.
  * @my_width: get my_width.
- * @my_precision: my_precision specifications
+ * @my_pr: my_precision specifications
  * @my_size: my_size specifiers.
  * Return: Number of chars printed.
  */
 int print_octate(va_list types, char bufferings[],
-	int my_flags, int my_width, int my_precision, int my_size)
+	int my_flags, int my_width, int my_pr, int my_size)
 {
 	int a = BUFFER_SIZE - 2;
 	unsigned long int digit = va_arg(types, unsigned long int);
@@ -71,7 +71,7 @@ int print_octate(va_list types, char bufferings[],
 
 	a++;
 
-	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_precision, my_size));
+	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_pr, my_size));
 }
 
 /**
@@ -116,13 +116,13 @@ int print_hex_upperdec(va_list types, char bufferings[],
  * @my_flags:  Calculates active my_flags.
  * @flagx: Calculates active my_flags.
  * @my_width: get my_width.
- * @my_precision: my_precision specifications.
+ * @my_pr: my_precision specifications.
  * @my_size: my_size specifiers.
  * @my_size: my_size specifications.
  * Return: Number of chars printed.
  */
 int print_hex(va_list types, char assign[], char bufferings[],
-	int my_flags, char flagx, int my_width, int my_precision, int my_size)
+	int my_flags, char flagx, int my_width, int my_pr, int my_size)
 {
 	int a = BUFFER_SIZE - 2;
 	unsigned long int digit = va_arg(types, unsigned long int);
@@ -150,5 +150,5 @@ int print_hex(va_list types, char assign[], char bufferings[],
 
 	a++;
 
-	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_precision, my_size));
+	return (write_unsigned(0, a, bufferings, my_flags, my_width, my_pr, my_size));
 }
