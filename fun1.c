@@ -4,18 +4,18 @@
  * print_characters - Prints a character
  * @types: List of arguments
  * @bufferings: bufferings array to handle prints
- * @my_flags:  Calculate active my_flags
- * @my_width: Calc my_width
- * @my_precision: my_precision specifications
- * @my_size: my_size specifier
+ * @myf:  Calculate active my_flags
+ * @myw: Calc my_width
+ * @myp: my_precision specifications
+ * @mys: my_size specifier
  * Return: Number of chars printed
  */
 int print_characters(va_list types, char bufferings[],
-	int my_flags, int my_width, int my_precision, int my_size)
+	int myf, int myw, int myp, int mys)
 {
 	char b = va_arg(types, int);
 
-	return (write_mychar(b, bufferings, my_flags, my_width, my_precision, my_size));
+	return (write_mychar(b, bufferings, myf, myw, myp, mys));
 }
 
 /**
@@ -99,21 +99,21 @@ int percent_prints(va_list types, char bufferings[],
  * print_integer - Print int
  * @types: List of arguments.
  * @bufferings: bufferings array to handle print.
- * @my_flags:  Calculates active my_flags
- * @my_width: get my_width..
- * @my_precision: my_precision specifications.
- * @my_size: my_size specifiers.
+ * @myf:  Calculates active my_flags
+ * @myw: get my_width..
+ * @myp: my_precision specifications.
+ * @mys: my_size specifiers.
  * Return: Numbers of chars printed.
  */
 int print_integer(va_list types, char bufferings[],
-	int my_flags, int my_width, int my_precision, int my_size)
+	int myf, int myw, int myp, int mys)
 {
 	int a = BUFFER_SIZE - 2;
 	int just_negative = 0;
 	long int j = va_arg(types, long int);
 	unsigned long int digit;
 
-	j = convert_mynumber(j, my_size);
+	j = convert_mynumber(j, mys);
 
 	if (j == 0)
 		bufferings[a--] = '0';
@@ -132,7 +132,7 @@ int print_integer(va_list types, char bufferings[],
 	}
 a++;
 
-return (write_mynumber(just_negative, a, bufferings, my_flags, my_width, my_precision, my_size));
+return (write_mynumber(just_negative, a, bufferings, myf, myw, myp, mys));
 }
 
 /**
