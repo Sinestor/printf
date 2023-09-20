@@ -119,8 +119,7 @@ int print_myreverse(va_list types, char bufferings[],
 
 		my_struct = ")Null(";
 	}
-	
-	for (a = 0; my_struct[a]; a++);
+	for (a = 0; my_struct[a]; a++)
 
 	for (a = a - 1; a >= 0; a--)
 	{

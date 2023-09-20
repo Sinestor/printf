@@ -15,7 +15,7 @@ int print_characters(va_list types, char bufferings[],
 {
 	char b = va_arg(types, int);
 
-	return(write_mychar(b,bufferings,my_flags, my_width, my_precision, my_size));
+	return (write_mychar(b, bufferings, my_flags, my_width, my_precision, my_size));
 }
 
 /**
@@ -132,7 +132,7 @@ int print_integer(va_list types, char bufferings[],
 	}
 a++;
 
-return(write_mynumber(just_negative,a,bufferings,my_flags,my_width,my_precision,my_size));
+return (write_mynumber(just_negative, a, bufferings, my_flags, my_width, my_precision, my_size));
 }
 
 /**
@@ -151,6 +151,7 @@ int binary_prints(va_list types, char bufferings[],
 	int read;
 unsigned int j, a, p, add;
 	unsigned int x[32];
+
 	ALPHA(bufferings);
 	ALPHA(my_flags);
 	ALPHA(my_width);

@@ -96,9 +96,9 @@ int write_mynum(int find, char bufferings[],
 	int a, my_pile_start = 1;
 
 	if (my_precision == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0' && my_width == 0)
-		return (0); 
+		return (0);
 	if (my_precision == 0 && find == BUFFER_SIZE - 2 && bufferings[find] == '0')
-		bufferings[find] = my_pile = ' '; 
+		bufferings[find] = my_pile = ' ';
 	if (my_precision > 0 && my_precision < measure)
 		my_pile = ' ';
 	while (my_precision > measure)
