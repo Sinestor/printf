@@ -77,7 +77,7 @@ long int convert_mynumber(long int digit, int my_size)
  * @myf: Calculates active my_flags
  * @myw: get my_width.
  * @myp: Precision specification
- * @mys: my_size specifier
+ * @mys: my_size specifiers
  * Return: 1 or 2;
  */
 int handle_myprint(const char *fume, int *find,
