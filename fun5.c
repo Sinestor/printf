@@ -139,7 +139,7 @@ int write_mynum(int find, char bufferings[],
  * write_unsigned - Writes an unsigned number
  * @just_negative: Number indicating if the num is negative
  * @find: Index at which the number starts in the bufferings
- * @bufferings: Array of chars
+ * @bufferings: Array of chars.
  * @my_flags: my_flags specifiers
  * @my_width: my_width specifier
  * @my_precision: my_precision specifier

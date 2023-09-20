@@ -116,7 +116,7 @@ int print_hex_upperdec(va_list types, char bufferings[],
  * @my_flags:  Calculates active my_flags.
  * @flagx: Calculates active my_flags.
  * @my_width: get my_width.
- * @my_pr: my_precision specifications.
+ * @my_pr: my_precision specification.
  * @my_size: my_size specifiers.
  * @my_size: my_size specifications.
  * Return: Number of chars printed.

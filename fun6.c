@@ -101,7 +101,7 @@ int get_my_size(const char *format, int *a)
  * get_my_width - Calculates the width for printing
  * @format: Formatted string in which to print the arguments.
  * @a: List of arguments to be printed.
- * @list: list of arguments.
+ * @list: list of argument.
  *
  * Return: width.
  */
