@@ -97,13 +97,13 @@ int percent_prints(va_list types, char bufferings[],
 
 /**
  * print_integer - Print int
- * @types: List of arguments.
- * @bufferings: bufferings array to handle print.
+ * @types: List of arguments
+ * @bufferings: bufferings array to handle print
  * @myf:  Calculates active my_flags
- * @myw: get my_width..
- * @myp: my_precision specifications.
- * @mys: my_size specifiers.
- * Return: Numbers of chars printed.
+ * @myw: get my_width
+ * @myp: my_precision specifications
+ * @mys: my_size specifiers
+ * Return: Numbers of chars printed
  */
 int print_integer(va_list types, char bufferings[],
 	int myf, int myw, int myp, int mys)

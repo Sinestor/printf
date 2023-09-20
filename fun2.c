@@ -2,9 +2,9 @@
 
 
 /**
- * myprint_pointer - Prints the value of pointer variables.
- * @types: List of argumentss.
- * @bufferings: bufferings array to handle print.
+ * myprint_pointer - Prints the value of pointer variables
+ * @types: List of argumentss
+ * @bufferings: bufferings array to handle print
  * @my_flags:  Calculates active flag.
  * @my_width: get my_width.
  * @my_precision: my_precision specifications.
