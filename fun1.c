@@ -136,14 +136,14 @@ return (write_mynumber(just_negative, a, bufferings, my_flags, my_width, my_prec
 }
 
 /**
- * binary_prints - Prints unsigned numbers.
- * @types: Lists of arguments.
- * @bufferings: bufferings array to handle prints.
- * @my_flags:  Calculates active flag.
- * @my_width: get my_width..
- * @my_precision: my_precision specifications.
- * @my_size: my_size specifiers.
- * Return: Numbers of char printed.
+ * binary_prints - Prints unsigned numbers
+ * @types: Lists of arguments
+ * @bufferings: bufferings array to handle prints
+ * @my_flags:  Calculates active flag
+ * @my_width: get my_width
+ * @my_precision: my_precision specifications
+ * @my_size: my_size specifiers
+ * Return: Numbers of char printed
  */
 int binary_prints(va_list types, char bufferings[],
 	int my_flags, int my_width, int my_precision, int my_size)

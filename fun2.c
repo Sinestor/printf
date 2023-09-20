@@ -52,8 +52,8 @@ int myprint_pointer(va_list types, char bufferings[],
 }
 
 /**
- * print_nonprint - Prints ascii codes in hex of non printable chars.
- * @types: Lists of arguments.
+ * print_nonprint - Prints ascii codes in hex of non printable chars
+ * @types: Lists of arguments
  * @bufferings: bufferings array to handle print
  * @my_flags:  Calculates active my_flags
  * @my_width: get my_width
